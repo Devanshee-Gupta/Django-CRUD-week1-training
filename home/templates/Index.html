@@ -1,0 +1,26 @@
+{% extends "base.html" %} 
+
+{% block start %}
+
+<div id="index_body" class="d-flex h-100vh flex-column justify-content-center align-items-center">
+    <div class=" p-4 mx-auto container col-8">
+        <h1 class="text-center my-5">CRUD Operations in Django</h1>
+      </div>
+      <div class="container">
+        <div class="col-5 mx-auto">
+          <div class="card shadow my-5">
+            <a href="/employee/" class="nav-link">
+              <h2 class="text-center my-3">Employees Model</h2>
+            </a>
+          </div>
+          <div class="card shadow my-5">
+              <a href="/department/" class="nav-link">
+                <h2 class="text-center my-3">Departments Model</h2>
+              </a>
+            </div>
+        </div>
+      </div>
+</div>
+
+
+{% endblock%}

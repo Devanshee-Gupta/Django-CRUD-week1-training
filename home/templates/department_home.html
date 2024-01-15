@@ -1,0 +1,108 @@
+{% extends "base.html" %} 
+{% block start %}
+
+<div id="department_home_body">
+<div class="row m-0 p-0 pt-5 d-flex justify-content-end align-items-center">
+
+<h1 class="mb-5 col-sm-5 text-center">Insert records for Department</h1>
+<form class="p-4 container col-sm-5 form-group" method="post">
+  {% csrf_token %}
+  
+
+  <!-- message -->
+  {% if messages %} 
+  {% for message in messages %}
+    <div
+      class='alert alert-{%if message.tags == "error" %}danger{%else%}success{%endif%} alert-dismissible fade show'
+      role="alert"
+    >
+    {{ message }}
+    <button
+      type="button"
+      class="btn-close"
+      data-bs-dismiss="alert"
+      aria-label="Close"
+    ></button>
+  </div>
+  {% endfor %} 
+  {% endif %}
+  
+  <div class="mb-3">
+    <label for="department_id" class="form-label">Department Id </label>
+    <input
+      type="number"
+      class="form-control"
+      id="department_id"
+      name="department_id"
+      placeholder="Enter Department Id"
+      required
+    />
+  </div>
+  <div class="mb-3">
+    <label for="department_name" class="form-label"> Department Name </label>
+    <input
+      type="text"
+      class="form-control"
+      id="department_name"
+      name="department_name"
+      placeholder="Enter Department Name"
+      required
+    />
+  </div>
+  <div class="mb-3">
+    <label for="department_manager_id" class="form-label"> Department-Manager Employee Id </label>
+    <input
+      type="number"
+      class="form-control"
+      id="department_manager_id"
+      name="department_manager_id"
+      placeholder="Enter Employee Id of Department Manager"
+      required
+    />
+  </div>
+  <div class="mx-auto mt-2 text-center">
+    <input class="btn btn-secondary" type="submit" />
+  </div>
+</form>
+</div>
+<div class="col-10 mx-auto shadow-lg mt-5 card p-0">
+  <h1 class="text-center my-5">Records of Departments</h1>
+  <div class="col-9 mx-auto p-2">
+    <table class="table table-borderless">
+      <thead>
+        <tr class="text-center border-bottom">
+          <th scope="col">#</th>
+          <th scope="col">Department ID</th>
+          <th scope="col">Department Name</th>
+          <th scope="col">Department Manager</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        {%for department in Department_all %}
+        <tr class="text-center">
+          <th scope="row">{{forloop.counter}}</th>
+          <td>{{department.Department_id}}</td>
+          <td>{{department.Department_name}}</td>
+          <td>{{department.Department_manager.Employee_name}}</td>
+          <td class="text-center">
+            <a
+              href="/department-update/{{department.Department_id}}"
+              class="btn mx-2 btn-secondary"
+              >Update</a
+            >
+            <a
+              href="/department-delete/{{department.Department_id}}"
+              class="btn btn-danger"
+              >Delete</a
+            >
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+</div>
+
+{% endblock%}

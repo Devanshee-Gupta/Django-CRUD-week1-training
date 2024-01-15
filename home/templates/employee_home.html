@@ -1,0 +1,91 @@
+{% extends "base.html" %} {% block start %}
+
+<div id="employee_home_body" class="row p-5 m-0">
+<div id="form_box" class="col-md-5">
+<form class="mt-5 col-10 h-100 p-4 mx-auto container" method="post">
+  {% csrf_token %}
+
+  <h1 class="mb-5 text-center">Insert records for Employee</h1>
+
+  {% if messages %} 
+  {% for message in messages %}
+    <div
+      class='alert alert-{%if message.tags == "error" %}danger{%else%}success{%endif%} alert-dismissible fade show'
+      role="alert"
+    >
+    {{ message }}
+    <button
+      type="button"
+      class="btn-close"
+      data-bs-dismiss="alert"
+      aria-label="Close"
+    ></button>
+  </div>
+  {% endfor %} 
+  {% endif %}
+  <div class="mb-3">
+    <label for="employee_id" class="form-label"> Employee Id </label>
+    <input
+      type="number"
+      class="form-control"
+      id="employee_id"
+      name="employee_id"
+      placeholder="Enter your Employee Id"
+      required
+    />
+  </div>
+  <div class="mb-3">
+    <label for="employee_name" class="form-label"> Employee Name </label>
+    <input
+      type="text"
+      class="form-control"
+      id="employee_name"
+      name="employee_name"
+      placeholder="Enter your Name"
+      required
+    />
+  </div>
+  <div class="mx-auto">
+    <input class="btn btn-secondary" type="submit" />
+  </div>
+</form>
+</div>
+<div class="container col-md-7 ">
+  <h1 class="text-center my-5">Records of Employees</h1>
+  <div class="mx-auto card py-5 px-3 shadow-lg">
+    <table class="table table-striped">
+      <thead>
+        <tr class="text-center mx-auto border-bottom">
+          <th scope="col">#</th>
+          <th scope="col">Employee ID</th>
+          <th scope="col">Employee Name</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        {%for employee in Employee_all %}
+        <tr class="text-center">
+          <th scope="row">{{forloop.counter}}</th>
+          <td>{{employee.Employee_id}}</td>
+          <td>{{employee.Employee_name}}</td>
+          <td class="text-center">
+            <a
+              href="/employee-update/{{employee.Employee_id}}"
+              class="btn m-2 btn-secondary"
+              >Update</a
+            >
+            <a
+              href="/employee-delete/{{employee.Employee_id}}"
+              class="btn btn-danger m-2 text-xs"
+              >Delete</a
+            >
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+</div>
+
+{% endblock%}

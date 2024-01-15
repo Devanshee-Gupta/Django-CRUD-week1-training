@@ -1,0 +1,159 @@
+.h-100vh{
+    height: 100vh!important;
+}
+#back_btn{
+    position: absolute;
+    top: 10px;
+    left: 2px;
+}
+/* index page  */
+#index_body{
+    background-color: #DBD7A8;
+}
+#index_body *{
+    border-radius: 10px;
+}
+#index_body h1{
+    font-family: Cochin; 
+    font-size: 4.8em;
+}
+#index_body .card{
+    background-color: #F9FAE7;
+}
+#index_body h2{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode';
+    font-size: 1.5em;
+    color: rgba(0, 0, 0, 0.468);
+}
+
+
+/* employee_home  */
+
+#employee_home_body{
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    height: max-content;
+    background-color: #DBD7A8;
+}
+#employee_home_body #form_box{
+    margin-top: 7em;
+}
+#employee_home_body table{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode';
+    font-size: 1em;
+    color: rgba(0, 0, 0, 0.468);
+}
+#employee_home_body .card{
+    background-color: #F9FAE7;
+}
+#employee_home_body h1{
+    font-family: Cochin; 
+    font-size: 3em;
+}
+#employee_home_body input{
+    font-size: 1.1em;
+}
+#employee_home_body th{
+    line-height: 3em!important;
+    margin: auto;
+    
+}
+#employee_home_body td{
+    line-height: 2em!important;
+    vertical-align: middle;
+
+}
+
+
+/* employee_update */
+
+#employee_update_body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    height: max-content;
+    background-color: #DBD7A8;
+}
+
+#employee_update_body h1{
+    font-family: Cochin;
+    font-size: 4em;
+}
+
+#employee_update_body label{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode';
+    font-size: 1.1em;
+    color: rgba(0, 0, 0, 0.468);
+}
+
+#employee_update_body input{
+    font-size: 1.2em;
+}
+
+
+/* department_home_body  */
+
+#department_home_body{
+    min-height: 100vh;
+    height: max-content;
+    background-color: #DBD7A8;
+}
+
+#department_home_body h1{
+    font-family: Cochin;
+    font-size: 3.5em;
+
+}
+
+#department_home_body input{
+    font-size: 1.1em;
+}
+#department_home_body .card{
+    background-color: #F9FAE7;
+}
+
+#department_home_body label{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode';
+    font-size: 1.1em;
+    color: rgba(0, 0, 0, 0.468);
+}
+#department_home_body table{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode';
+    font-size: 1em;
+    color: rgba(0, 0, 0, 0.468);
+}
+
+thead{
+    border-bottom: 2px solid #DBD7A8;
+}
+
+#department_home_body th,td{
+    line-height: 4em!important;
+    vertical-align: middle;
+}
+
+
+/* department_update_body  */
+#department_update_body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    height: max-content;
+    background-color: #DBD7A8;
+}
+#department_update_body h1{
+    font-family: Cochin;
+    font-size: 4em;
+}
+#department_update_body label{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode';
+    font-size: 1.1em;
+    color: rgba(0, 0, 0, 0.468);
+}
+#department_update_body input{
+    font-size: 1.2em;
+}
+

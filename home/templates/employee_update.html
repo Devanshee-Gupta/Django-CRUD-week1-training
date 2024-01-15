@@ -1,0 +1,52 @@
+{% extends "base.html" %} {% block start %}
+
+<div class="h-100vh" id="employee_update_body">
+  <form class=" p-4 mx-auto container col-5" method="post">
+    {% csrf_token %}
+    <h1 class="mb-5 text-center">Update records for Employee</h1>
+
+    <!-- message -->
+    {% if messages %} {% for message in messages %}
+    <div
+      class='alert alert-{%if message.tags == "error" %}danger{%else%}success{%endif%} alert-dismissible fade show'
+      role="alert"
+    >
+      {{ message }}
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="alert"
+        aria-label="Close"
+      ></button>
+    </div>
+    {% endfor %} {% endif %}
+
+    <div class="mb-4">
+      <label for="employee_id" class="form-label"> Employee Id </label>
+      <input
+        type="number"
+        class="form-control"
+        id="employee_id"
+        name="employee_id"
+        value="{{Employee.Employee_id}}"
+        required
+      />
+    </div>
+    <div class="mb-4">
+      <label for="employee_name" class="form-label"> Employee Name </label>
+      <input
+        type="text"
+        class="form-control"
+        id="employee_name"
+        name="employee_name"
+        value="{{Employee.Employee_name}}"
+        required
+      />
+    </div>
+    <div class="mx-auto mt-5 text-center">
+      <input class="btn btn-secondary" type="submit" />
+    </div>
+  </form>
+</div>
+
+{% endblock%}
